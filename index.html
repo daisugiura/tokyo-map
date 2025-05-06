@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>東京建築祭おすすめマップ</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- 独自スタイル -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #map {
+      height: 500px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-4xl font-bold text-center mb-6">東京建築祭 TOKYO ARCHTECTURE FESTIVAL 2025</h1>
+    <h1 class="text-4xl font-bold text-center mb-6">おすすめマップ</h1>
+
+    <p style="margin: 15px 0;">
+      建築愛好家へ――<br>
+      東京各地の名建築が一斉に扉を開く、年に一度の特別なイベント
+      <span style="color: #2980b9;; font-weight: bold;">「東京建築祭」</span>がついに始まります。<br>普段はなかなか入れない貴重な建物の見学会や、建築家とのトークイベントなど、街を歩きながら建築の魅力を再発見できる絶好のチャンスです。
+    </p>
+    <p style="margin: 15px 0;">
+      ただ、<a href="https://tokyo2025.kenchikusai.jp/" target="_blank" style="color: #2980b9; text-decoration: underline; font-weight: bold;">公式ホームページ</a>では
+      <span style="color: #2980b9;; font-weight: bold;">「どの建物がいつ見学できて、どのあたりにあるのか分かりにくい…」</span>
+      という声も。
+    </p>
+    <p style="margin: 15px 0;">
+      そこで当サイトでは、
+      <span style="color: #2980b9;; font-weight: bold;">日にちごとに東京のどのあたりにあるか検索できる便利な見学マップ</span>
+      を作成しました！
+    </p>
+    <p style="margin: 15px 0;">
+      <span style="color: #2980b9; font-weight: bold;">「5月18日に見られる建築ってどこ？」「アクセスしやすい見学会だけ知りたい！」</span><br>
+      そんな希望に応える、シンプルで使いやすい地図で、あなたの建築散歩をもっと快適に。
+    </p>
+    <p style="margin: 15px 0;">
+      今年の建築祭、気になる建物を見逃さないように、ぜひこのマップを活用してみてください。<br>
+      そして、東京という都市の奥深さ、美しさに触れてみませんか？
+    </p>
+
+    <label for="dateSelect" class="block text-lg font-semibold mb-2">特別公開・展示日を選択:</label>
+    <select id="dateSelect" class="w-full p-3 mb-6 rounded border border-gray-300 shadow-sm">
+      <option value="all dates">すべての日付</option> 
+      <option value="2025-05-17">2025年5月17日(土)</option>
+      <option value="2025-05-18">2025年5月18日(日)</option>
+      <option value="2025-05-19">2025年5月19日(月)</option>
+      <option value="2025-05-20">2025年5月20日(火)</option>
+      <option value="2025-05-21">2025年5月21日(水)</option>
+      <option value="2025-05-22">2025年5月22日(木)</option>
+      <option value="2025-05-23">2025年5月23日(金)</option>
+      <option value="2025-05-24">2025年5月24日(土)</option>
+      <option value="2025-05-25">2025年5月25日(日)</option>
+    </select>
+
+    <div id="map" class="w-full rounded-lg mb-8 border border-gray-300 shadow-md"></div>
+    <div id="spotInfo" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+
+  <!-- Leaflet JS（先に読み込む） -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- 自作スクリプト -->
+  <script src="script.js"></script>
+</body>
+</html>
